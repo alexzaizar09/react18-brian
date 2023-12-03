@@ -2,8 +2,12 @@
   "name": "react18",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx}'"
+  },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "prettier": "^3.1.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
