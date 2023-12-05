@@ -7,7 +7,7 @@
   "parserOptions": {
     "ecmaVersion": 2022,
     "sourceType": "module",
-    "ecmaFeatues": {
+    "ecmaFeatures": {
       "js": true,
       "jsx": true,
       "ts": true,
