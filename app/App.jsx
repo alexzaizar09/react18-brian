@@ -1,15 +1,13 @@
 import ReactDOM from "react-dom";
-import Pet from "./Pet";
+import SearchParams from "./SearchParams";
 
 const App = () => {
   return (
     <div>
       <h1>Pure React v18</h1>
-      <Pet name="Maia" type="Dog" breed="Beagle" />
-      <Pet name="Doink" type="Cat" breed="Mixed" />
-      <Pet name="Pepper" type="Bird" breed="Cockatiel" />
+      <SearchParams />
     </div>
-  )
+  );
 };
 
 const container = document.getElementById("root");
