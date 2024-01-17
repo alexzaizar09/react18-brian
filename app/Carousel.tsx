@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 
-const Carousel = ({ images }) => {
+const Carousel = ({ images }: { images: string[] }) => {
   const [active, setActive] = useState(0);
 
   return (
@@ -10,7 +10,9 @@ const Carousel = ({ images }) => {
         {images.map((photo, index) => (
           <img
             data-index={index}
-            onClick={(e) => {
+            onClick={(e: MouseEvent<HTMLElement>) => {
+              if (!(e.target instanceof HTMLElement)) return;
+              if (e.target.dataset.index === undefined) return;
               setActive(+e.target.dataset.index);
             }}
             key={photo}
