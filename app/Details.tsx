@@ -1,11 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
+import { QueryKey, useQuery } from "@tanstack/react-query";
 import { useParams, useNavigate } from "react-router-dom";
 import fetchPet from "./fetchPet";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
 import { useState, useContext, lazy } from "react";
 import AdoptedPetContext from "./AdoptedPetContext";
-import { PetAPIResponse } from "./APIResponsesTypes";
+import { Pet, PetAPIResponse } from "./APIResponsesTypes";
 
 const Modal = lazy(() => import("./Modal"));
 
@@ -17,7 +17,7 @@ const Details = () => {
   const navigate = useNavigate();
   const [_, setAdoptedPet] = useContext(AdoptedPetContext);
 
-  const petRequest = useQuery<PetAPIResponse>({
+  const petRequest = useQuery({
     queryKey: ["details", id],
     queryFn: fetchPet,
   });
